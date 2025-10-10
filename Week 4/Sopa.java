@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Sopa {
     public static void main(String[] args) {
@@ -7,7 +6,7 @@ public class Sopa {
 
         int M = sc.nextInt();
         int N = sc.nextInt();
-
+        int k = 1;
         while (M != 0) {
             sc.nextLine();
             char[][] board = new char[M][N];
@@ -22,14 +21,14 @@ public class Sopa {
                 palavras[i] = sc.nextLine();
             }
 
-            System.out.println(Arrays.deepToString(board));
-            System.out.println(Arrays.toString(palavras));
+            // System.out.println(Arrays.deepToString(board));
+            // System.out.println(Arrays.toString(palavras));
 
             int[][] checkado = new int[M][N];
 
             for (int i = 0; i < M; i++) {
                 checkado[i] = checkarSequencia(board[i], palavras);
-                System.out.println(Arrays.toString(checkado[i]));
+                // System.out.println(Arrays.toString(checkado[i]));
             }
 
             char[][] boardRevsersed = new char[N][M];
@@ -44,6 +43,29 @@ public class Sopa {
             }
 
             int[][] checkedCols = new int[M][N];
+
+            for (int i = 0; i < M; i++) {
+                for (int j = 0; j < N; j++) {
+                    checkedCols[i][j] = chackedColsRevsered[j][i];
+                }
+            }
+            for (int i = 0; i < M; i++) {
+                for (int j = 0; j < N; j++) {
+                    if (checkedCols[i][j] == 0 && checkado[i][j] == 0) {
+                        board[i][j] = '.';
+                    }
+                }
+            }
+
+            // System.out.println(Arrays.deepToString(board));
+
+            // print everythin
+            System.out.println(String.format("Input #%d", k));
+            k++;
+            for (int i = 0; i < M; i++) {
+                String toPrint = new String(board[i]);
+                System.out.println(toPrint);
+            }
 
             // isto já faz parte do próximo
             M = sc.nextInt();
