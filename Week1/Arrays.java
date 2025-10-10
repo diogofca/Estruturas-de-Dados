@@ -29,6 +29,7 @@ public class Arrays {
         System.out.println(a[1].length);
         System.out.println();
         Scanner sc = new Scanner(System.in);
+        sc.close();
 
     }
 

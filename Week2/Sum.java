@@ -14,6 +14,7 @@ public class Sum {
 
         // Imprime a soma dos dois números
         System.out.println(a + b);
+        stdin.close();
     }
 
 }

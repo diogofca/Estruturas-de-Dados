@@ -19,5 +19,6 @@ public class ReadNumbers {
             v[i] = stdin.nextInt();
 
         writeArray(v); // Chamar procedimento que escreve
+        stdin.close();
     }
 }

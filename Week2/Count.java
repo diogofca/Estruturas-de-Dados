@@ -12,5 +12,6 @@ public class Count {
             String s = stdin.next();
             System.out.println(counter + ": " + s);
         }
+        stdin.close();
     }
 }
