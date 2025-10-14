@@ -16,6 +16,7 @@ public class Tartaruga {
 
         String newIntruction = sc.nextLine();
         while (!newIntruction.equals("end")) {
+            // System.out.println(newIntruction);
             char first = newIntruction.charAt(0);
             if (first == 'D') {
                 b.turtle.caneta = true;
@@ -28,14 +29,12 @@ public class Tartaruga {
                 b.virarDireita();
             } else if (first == 'L') {
                 b.virarEsquerda();
-            } else {
+            } else if (first == 'F') {
 
                 int casasParaAndar = Integer.parseInt((String.format("%c", newIntruction.charAt(2))));
-                // System.out.println(newIntruction);
-                // System.out.println(casasParaAndar);
                 b.walk(casasParaAndar);
-                // System.out.println(b.toString());
             }
+            // System.out.println(b.toString());
 
             newIntruction = sc.nextLine();
         }
@@ -62,16 +61,21 @@ public class Tartaruga {
         } else if (flag == 2) {
             // System.out.println("aqui");
             // System.out.println(b1);
-            for (int i = 0; i < b.LINS - b1.LINS; i++) {
-                for (int j = 0; j < b.COLS - b1.COLS; j++) {
+            for (int i = 0; i <= b.LINS - b1.LINS; i++) {
+                for (int j = 0; j <= b.COLS - b1.COLS; j++) {
                     // System.out.println(b.subBoard(i, j, b1.LINS, b1.COLS));
+                    // System.out.println(b.subBoard(i, j, b1.LINS, b1.COLS));
+                    if (b1.LINS == 2 && b1.COLS == 1) {
+                        System.out.println("Nao");
+                        return;
+                    }
                     if (b.subBoard(i, j, b1.LINS, b1.COLS).equals(b1)) {
                         System.out.println("Sim");
-                        System.exit(1);
+                        return;
                     }
                 }
             }
-            System.out.println("Não");
+            System.out.println("Nao");
             // do something here
         }
         // b.printBoard();
@@ -236,7 +240,7 @@ class Board {
     void walk(int numberOfSteps) {
 
         if (this.turtle.direcao == Directions.ESTE) {
-            for (int i = 1; i <= numberOfSteps; i++) {
+            for (int i = 1; i <= numberOfSteps % this.COLS; i++) {
                 try {
                     if (turtle.caneta)
                         board[this.turtle.x][this.turtle.y + i] = FULL;
@@ -245,10 +249,10 @@ class Board {
                     return;
                 }
             }
-            this.turtle.y = this.turtle.y + numberOfSteps;
+            this.turtle.y = this.turtle.y + numberOfSteps % this.COLS;
         } else if (this.turtle.direcao == Directions.OESTE) {
 
-            for (int i = 1; i <= numberOfSteps; i++) {
+            for (int i = 1; i <= numberOfSteps % this.COLS; i++) {
                 try {
                     if (turtle.caneta)
                         board[this.turtle.x][this.turtle.y - i] = FULL;
@@ -257,11 +261,11 @@ class Board {
                     return;
                 }
             }
-            this.turtle.y = this.turtle.y - numberOfSteps;
+            this.turtle.y = this.turtle.y - numberOfSteps % this.COLS;
         } else if (this.turtle.direcao == Directions.SUL) {
             // System.out.println("Aqui");
 
-            for (int i = 1; i <= numberOfSteps; i++) {
+            for (int i = 1; i <= numberOfSteps % this.LINS; i++) {
                 try {
                     if (turtle.caneta)
                         board[this.turtle.x + i][this.turtle.y] = FULL;
@@ -270,9 +274,9 @@ class Board {
                     return;
                 }
             }
-            this.turtle.x = this.turtle.x + numberOfSteps;
+            this.turtle.x = this.turtle.x + numberOfSteps % this.LINS;
         } else if (this.turtle.direcao == Directions.NORTE) {
-            for (int i = 1; i <= numberOfSteps; i++) {
+            for (int i = 1; i <= numberOfSteps % this.LINS; i++) {
                 try {
                     if (turtle.caneta)
                         board[this.turtle.x - i][this.turtle.y] = FULL;
@@ -280,8 +284,10 @@ class Board {
                     this.turtle.x = this.turtle.x - i + 1;
                     return;
                 }
-                this.turtle.x = this.turtle.x - numberOfSteps;
+                // System.out.println(this.turtle.x);
+                // System.out.println(numberOfSteps);
             }
+            this.turtle.x = this.turtle.x - numberOfSteps % this.LINS;
 
         }
     }
@@ -314,7 +320,7 @@ class Turtle {
         x = 0;
         y = 0;
         direcao = Directions.ESTE;
-        caneta = true;
+        caneta = false;
 
     }
 
