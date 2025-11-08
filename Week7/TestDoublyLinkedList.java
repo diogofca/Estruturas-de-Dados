@@ -9,7 +9,7 @@ public class TestDoublyLinkedList {
     public static void main(String[] args) {
 
         // Criacao de lista de inteiros
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<Integer>();
+        DoublyLinkedList2<Integer> list = new DoublyLinkedList2<Integer>();
 
         // Escrevendo lista (no inicio esta vazia)
         System.out.println(list);

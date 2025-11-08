@@ -9,7 +9,7 @@ public class TestMyStack {
     public static void main(String[] args) {
 
         // Criacao da pilha
-        MyStack<Integer> s = new LinkedListStack<Integer>();
+        MyStack2<Integer> s = new LinkedListStack2<Integer>();
         // MyStack<Integer> s = new ArrayStack<Integer>();
 
         // Exemplo de insercao de elementos na pilha

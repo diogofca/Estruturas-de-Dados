@@ -4,7 +4,7 @@ public class ED195 {
             return false;
         }
 
-        MyStack<Character> n = new LinkedListStack<>();
+        MyStack2<Character> n = new LinkedListStack2<>();
         for (char i : s.toCharArray()) {
             if (i == '(' || i == '[' || i == '{') {
                 n.push(i);

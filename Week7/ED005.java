@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ED005 {
 
     public static void doLoop(String[] comandArray) {
-        MyStack<Integer> stack = new LinkedListStack<Integer>();
+        MyStack2<Integer> stack = new LinkedListStack2<Integer>();
         for (String j : comandArray) {
             if (j.equals("+")) {
                 Integer first = stack.pop();

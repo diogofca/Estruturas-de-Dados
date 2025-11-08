@@ -6,10 +6,10 @@
 // -----------------------------------------------------------
 
 public class LinkedListQueue<T> implements MyQueue<T> {
-    private DoublyLinkedList<T> list;
+    private DoublyLinkedList2<T> list;
 
     LinkedListQueue() {
-        list = new DoublyLinkedList<T>();
+        list = new DoublyLinkedList2<T>();
     }
 
     public void enqueue(T v) {

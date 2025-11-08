@@ -14,7 +14,7 @@
 
 import java.util.Arrays;
 
-public class ArrayStack<T> implements MyStack<T> {
+public class ArrayStack<T> implements MyStack2<T> {
     public static final int CAPACITY = 1000; // Capacidade padrao
     private T[] data; // Array para conter elementos
     private int size; // Quantidade de elementos

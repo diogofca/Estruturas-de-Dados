@@ -5,7 +5,7 @@
 // Implementacao do TAD Pilha usando lista duplamente ligada
 // -----------------------------------------------------------
 
-public class LinkedListStack<T> implements MyStack<T> {
+public class LinkedListStack<T> implements MyStack2<T> {
     private DoublyLinkedList<T> list;
 
     LinkedListStack() {
