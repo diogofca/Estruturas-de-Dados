@@ -21,7 +21,7 @@ public class DNode<T> {
     public T getValue() {
         return value;
     }
-
+// lala isto é um ficheiro e eu estou a editá-lo
     public DNode<T> getPrev() {
         return prev;
     }

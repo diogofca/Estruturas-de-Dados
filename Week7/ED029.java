@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 public class ED029 {
 
     public static void main (String[] args) {
