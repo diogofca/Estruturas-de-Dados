@@ -1,0 +1,26 @@
+5 1
+234523455
+Restaurante Abocanhado
+Restauracao
+10
+21332
+343554566
+Rodoviaria Andando
+Transportes
+15
+324003
+122324456
+Restaurante do Ze
+Restauracao
+10
+120334
+123345565
+Metro do Porto
+Transportes
+15
+123343
+733345566
+ZXY Informatica
+Servicos
+20
+200430

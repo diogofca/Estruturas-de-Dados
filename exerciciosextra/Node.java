@@ -1,11 +1,4 @@
-// -----------------------------------------------------------
-// Estruturas de Dados 2025/2026 (CC1007) - DCC/FCUP
-// https://www.dcc.fc.up.pt/~fds/aulas/EDados/2526/
-// -----------------------------------------------------------
-// Classe com um no generico
-// -----------------------------------------------------------
-
-public class Node<T> {
+class Node<T> {
    private T value;      // Valor guardado no no
    private Node<T> next; // Referencia para o proximo no da lista
 
