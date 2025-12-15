@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ED172 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        BSTMap1<String, Integer> dict = new BSTMap1<>();
+        BSTMap<String, Integer> dict = new BSTMap<>();
         while (true) {
             try {
                 String palavra = sc.next();
