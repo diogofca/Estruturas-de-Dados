@@ -20,7 +20,7 @@ public class TestBTree {
         System.out.println("contains(2) = " + t.contains(2));
         System.out.println("contains(3) = " + t.contains(3));
         // Escrever nos da arvore seguindo varias ordens possiveis
-        System.out.println(t.level(1));
+        System.out.println(t.level(5));
         t.printPreOrder();
         t.printInOrder();
         t.printPostOrder();
